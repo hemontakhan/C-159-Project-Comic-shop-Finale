@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <title>Comic Shop</title>
+ <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script> 
+ <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
+
+ <script src="js/Comics.js"></script>
+ <script src="js/Cursor.js"></script>
+
+</head>
+<body>
+ <a-scene>
+
+ <a-sky color="#90CAF9"></a-sky>
+
+ <a-plane
+ id="shop-floor"
+ color="#78909c"
+ width="100"
+ height="100"
+ rotation="-90 0 0"
+ 
+    >
+</a-plane>
+
+ <a-entity id="posterContainer" comic cursor-listener></a-entity>
+
+ <a-camera position="0 10 20">
+
+ <!--Title-->
+ <a-entity id="shop-title" position='0 0.7 -1' text="font: exo2bold;align: center;width: 2.5;value: VIRTUAL COMIC SHOP"></a-entity>
+ <a-entity id="shop-subtite" position='0 0.5 -1' text="font: dejavu; align: center;width: 1;value: IT'S TIME TO READ COMICS VIRTUALLY "></a-entity>
+
+ <!---Cursor-->
+ <a-entity
+  id="Mouse-cursor"
+  cursor
+  position="0 0 -7"
+  geometry="primitive:ring;radiusinner: 0.05;radiusouter: 0.03"
+  material="color:red;"
+  ></a-entity>
+
+  <a-entity
+   id="fade-background"
+   geometry = 'primitive: plane,width:45,height:45'
+   material = 'color:black,shader: flat,side : back,transparent: true,opacity : 0.6'
+   visible  = 'false'
+  ></a-entity>
+ 
+</a-camera>
+
+</a-scene>
+</body>
+</html>
